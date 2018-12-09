@@ -1,5 +1,12 @@
 package jp.ac.uryukyu.ie.e185710;
 
+/**
+ * ヒーロークラスと敵クラスの共通部分をまとめたスーパークラス。
+ * String name; //ヒーローや敵の名前
+ * int hitPoint; //ヒーローや敵のHP
+ * int attack; //ヒーローや敵の攻撃値
+ * boolean dead; //ヒーローや敵の生死状態　true = 死
+ */
 public class LivingThing {
     private String name;
     private int hitPoint;
@@ -17,6 +24,11 @@ public class LivingThing {
         return dead;
     }
     public String getName(){ return name; }
+
+    /**
+     * opponentを攻撃するメソッド。
+     * @param opponent 攻撃する相手
+     */
     public void attack(LivingThing opponent){
         if( isDead() == false ){
             int damage = (int)(Math.random() * attack);
